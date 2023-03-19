@@ -5,7 +5,7 @@
   </a>
 </p>
 
-> Aplicação simples de um sistema bancário que permite a criação de contas, consultas de saldo, depósitos e saques. Construído em NodeJS, utilizando os módulos Chalk, Inquirer e FS
+> Aplicação simples de um sistema bancário que permite a criação de contas, consultas de saldo, depósitos, saques e transferências. Construído em NodeJS, utilizando os módulos Chalk, Inquirer e FS
 
 ## Install
 

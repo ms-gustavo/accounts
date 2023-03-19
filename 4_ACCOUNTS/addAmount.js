@@ -4,17 +4,17 @@ import fs from "fs";
 import deposit from "./deposit.js";
 import getAccount from "./getAccount.js";
 
-export default function addAmount(accountName, ammount) {
+export default function addAmount(accountName, amount) {
   const accountData = getAccount(accountName);
 
-  if (!ammount) {
+  if (!amount) {
     console.log(
       chalk.bgRed.black(`Ocorreu um erro, tente novamente mais tarde`)
     );
     return deposit();
   }
 
-  accountData.balance = parseFloat(ammount) + parseFloat(accountData.balance);
+  accountData.balance = parseFloat(amount) + parseFloat(accountData.balance);
   fs.writeFileSync(
     `./accounts/${accountName}.json`,
     JSON.stringify(accountData),
@@ -23,6 +23,6 @@ export default function addAmount(accountName, ammount) {
     }
   );
   console.log(
-    chalk.green(`Foi depositado o valor de R$${ammount} na sua conta`)
+    chalk.green(`Foi depositado o valor de R$${amount} na sua conta`)
   );
 }

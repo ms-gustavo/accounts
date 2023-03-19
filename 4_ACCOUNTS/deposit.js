@@ -23,14 +23,14 @@ export default function deposit() {
       inquirer
         .prompt([
           {
-            name: "ammount",
+            name: "amount",
             message: "Quanto você deseja depositar?",
           },
         ])
         .then((answer) => {
-          const ammount = answer["ammount"];
-          //add an ammount
-          addAmount(accountName, ammount);
+          const amount = answer["amount"];
+          //add an amount
+          addAmount(accountName, amount);
           operation();
         })
         .catch((err) => console.log(err));

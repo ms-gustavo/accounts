@@ -8,6 +8,7 @@ import buildAccount from "./builder.js";
 import deposit from "./deposit.js";
 import getAccountBalance from "./getAccountBalance.js";
 import withdraw from "./withdraw.js";
+import transfer from "./transfer.js";
 
 export default function operation() {
   inquirer
@@ -21,6 +22,7 @@ export default function operation() {
           "Consultar saldo",
           "Depositar",
           "Sacar",
+          "Transferir",
           "Sair",
         ],
       },
@@ -36,6 +38,8 @@ export default function operation() {
         getAccountBalance();
       } else if (action === "Sacar") {
         withdraw();
+      } else if (action === "Transferir") {
+        transfer();
       } else if (action === "Sair") {
         console.log(chalk.bgBlue.black(`Obrigado por usar o Accounts!`));
         process.exit();

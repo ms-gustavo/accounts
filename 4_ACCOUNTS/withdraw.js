@@ -25,36 +25,36 @@ export default function withdraw() {
       inquirer
         .prompt([
           {
-            name: "ammount",
+            name: "amount",
             message: "Quanto você deseja sacar?",
           },
         ])
         .then((answer) => {
-          const ammount = answer["ammount"];
+          const amount = answer["amount"];
 
-          removeAmmount(accountName, ammount);
+          removeamount(accountName, amount);
         })
         .catch((err) => console.log(err));
     })
     .catch((err) => console.log(err));
 }
 
-function removeAmmount(accountName, ammount) {
+function removeamount(accountName, amount) {
   const accountData = getAccount(accountName);
 
-  if (!ammount) {
+  if (!amount) {
     console.log(
       chalk.bgRed.bnlack(`Ocorreu um erro, tente novamente mais tarde.`)
     );
     return withdraw();
   }
 
-  if (accountData.balance < ammount) {
+  if (accountData.balance < amount) {
     console.log(chalk.bgRed.black(`Valor indisponível!`));
     return withdraw();
   }
 
-  accountData.balance = parseFloat(accountData.balance) - parseFloat(ammount);
+  accountData.balance = parseFloat(accountData.balance) - parseFloat(amount);
 
   fs.writeFileSync(
     `./accounts/${accountName}.json`,
@@ -64,7 +64,7 @@ function removeAmmount(accountName, ammount) {
     }
   );
   console.log(
-    chalk.green(`Foi realizado um saque de R$${ammount} da sua conta!`)
+    chalk.green(`Foi realizado um saque de R$${amount} da sua conta!`)
   );
   operation();
 }

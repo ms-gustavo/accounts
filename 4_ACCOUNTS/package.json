@@ -1,7 +1,7 @@
 {
-  "name": "4_accounts",
+  "name": "bank-system",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aplicação simples de um sistema bancário que permite a criação de contas, consultas de saldo, depósitos e saques. Construído em NodeJS, utilizando os módulos Chalk, Inquirer e FS ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,8 +9,8 @@
   },
   "keywords": [],
   "type": "module",
-  "author": "",
-  "license": "ISC",
+  "author": "Gustavo Maia",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2",
     "inquirer": "^9.1.5"
